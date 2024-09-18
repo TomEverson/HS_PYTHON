@@ -1,0 +1,32 @@
+# SMPL: SIMPLE PROGRAMMING LANGUAGE FOR BEGINNERS
+
+## THIS LANGUAGE IS MORE SMPLER THAN PYTHON
+
+### Limitations
+
+1. I am not using any library
+2. No Regex
+3. No Lexing
+4. I am just only using string methods
+
+#### IT SUPPORTS
+
+1. VARIABLES
+   - NUMBERS
+   - BOOLEAN
+   - FLOATS
+   - STRING
+2. LOOPS
+   - USE RECURSION xD
+3. IF-ELSE CONTROL FLOWS ( Can't Do Nested )
+4. FUNCTIONS
+
+### VARIABLES
+
+```JS
+LET A BE 1
+LET B BE "HELLO"
+LET C BE 3.14
+LET D BE FALSE
+
+```

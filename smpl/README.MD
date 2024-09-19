@@ -1,13 +1,12 @@
 # SMPL: SIMPLE PROGRAMMING LANGUAGE FOR BEGINNERS
 
-## THIS LANGUAGE IS MORE SMPLER THAN PYTHON
+## THIS LANGUAGE IS MORE SMPLER THAN PYTHON, AND TURING COMPLETE
 
-### Limitations
+### Limitations ( For Me )
 
-1. I am not using any library
-2. No Regex
-3. No Lexing
-4. I am just only using string methods
+1. No Library ( Regex is Built-In Library For Python T_T )
+2. No Lexing
+3. Only Built-in Python Methods, and Data Structure
 
 #### IT SUPPORTS
 
@@ -23,7 +22,7 @@
 
 ### VARIABLES
 
-```JS
+```
 LET A BE 1
 LET B BE "HELLO"
 LET C BE 3.14

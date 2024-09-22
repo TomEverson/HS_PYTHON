@@ -1,7 +1,0 @@
-FUNCTION ADD()
-    BREAK
-    OUTPUT A
-
-OUTPUT 1
-
-ADD()

@@ -1,7 +1,10 @@
+import tempfile
 import subprocess
+import os
+import shutil
 
 
-class SmplInterpretor:
+class SmplCompiler:
     def __init__(self) -> None:
         self.indentation = 0
         self.in_multiline_string = False
@@ -13,7 +16,34 @@ class SmplInterpretor:
 
     def run_file(self, file_path):
         self.process_file(file_path)
-        exec(self.interpreted_code, self.glob)
+        self.compile_python_string(file_path.split(".")[0])
+
+    def compile_python_string(self, file_path):
+
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".py") as temp_file:
+            temp_file.write(self.interpreted_code.encode())
+            temp_file_path = temp_file.name
+        try:
+
+            subprocess.run([
+                "pyinstaller",
+                "--onefile",
+                "--name", file_path,  # Specify the output file name
+                temp_file_path
+            ], check=True)
+
+            # Remove the build directory and .spec file to keep only dist
+            shutil.rmtree('build')  # Remove the build directory
+            spec_file = f"{file_path}.spec"
+            if os.path.exists(spec_file):
+                os.remove(spec_file)  # Remove the .spec file
+
+            print(f"Compilation of {temp_file_path} complete.")
+        except subprocess.CalledProcessError as e:
+            print(f"Error during compilation: {e}")
+        finally:
+
+            os.remove(temp_file_path)
 
     def process_file(self, file_path):
         with open(file_path, 'r') as file:

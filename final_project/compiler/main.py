@@ -1,5 +1,5 @@
 import sys
-from smpl import SmplInterpretor
+from smpl import SmplCompiler
 
 
 def main():
@@ -8,9 +8,9 @@ def main():
         return
 
     file_path = sys.argv[1]
-    interpretor = SmplInterpretor()
+    compiler = SmplCompiler()
 
-    interpretor.run_file(file_path)
+    compiler.run_file(file_path)
 
 
 if __name__ == "__main__":
